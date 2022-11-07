@@ -1,7 +1,10 @@
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
+import Funcionario from 'App/Models/Funcionario'
 
 export default class extends BaseSeeder {
   public async run () {
-    // Write your database queries inside the run method
+    await Funcionario.createMany([
+      {nome:'robson', CPF:'999.999.999-99', telefone:99999-9999, endereço:'qnn 9 conj D casa 13' }
+    ])
   }
 }

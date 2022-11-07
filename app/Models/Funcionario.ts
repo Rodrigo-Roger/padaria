@@ -12,7 +12,7 @@ export default class Funcionario extends BaseModel {
   public CPF: String
 
   @column()
-  public telefone: number
+  public telefone: Number
 
   @column()
   public endereço: String
