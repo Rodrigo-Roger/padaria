@@ -7,7 +7,7 @@ import ClienteValidator from "App/Validators/ClienteValidator";
 export default class ClientesController {
 
     index(){
-        return Cliente.all()
+        return Cliente.query().preload("venda").paginate(1)
     }
 
     async store({request}){
@@ -16,8 +16,10 @@ export default class ClientesController {
     }
 
     show({request}){
+
         const id = request.param('id')
         return Cliente.findOrFail(id)
+        
     }
 
     async update({request}){

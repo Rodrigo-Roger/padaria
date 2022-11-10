@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class ProdutoHasVenda extends BaseModel {
+export default class ProdutoVenda extends BaseModel {
+  public static table = 'produto_vendas'
   @column({ isPrimary: true })
   public id: number
 
@@ -16,4 +17,6 @@ export default class ProdutoHasVenda extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  
 }
