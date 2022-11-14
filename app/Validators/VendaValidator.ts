@@ -13,7 +13,7 @@ export default class VendaValidator {
    *    ```
    *     schema.string({}, [ rules.alpha() ])
    *    ```
-   *
+   *a
    * 2. The email must be of data type string, formatted as a valid
    *    email. But also, not used by any other user.
    *    ```
