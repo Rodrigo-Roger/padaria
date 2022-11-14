@@ -23,6 +23,10 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
-
+Route.group(()=>{
 Route.resource('/clientes','ClientesController').apiOnly()
-
+Route.resource('/fornecedores','FornecedorsController').apiOnly()
+Route.resource('/produtos','ProdutosController').apiOnly()
+Route.resource('/funcionarios','FuncionariosController').apiOnly()
+Route.resource('/vendas','VendasController').apiOnly()
+}).middleware('auth')
