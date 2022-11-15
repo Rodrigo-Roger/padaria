@@ -25,7 +25,9 @@ export default class VendaValidator {
    */
   public schema = schema.create({
     valor_total: schema.string(),
+
     data: schema.date(),
+    
     clienteId: schema.number([
       rules.exists({table: 'clientes', column: 'id'}),
     ]),

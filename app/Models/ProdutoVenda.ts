@@ -7,10 +7,10 @@ export default class ProdutoVenda extends BaseModel {
   public id: number
 
   @column()
-  public produtos_id: Number
+  public produto_id: Number
 
   @column()
-  public vendas_id: Number
+  public venda_id: Number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

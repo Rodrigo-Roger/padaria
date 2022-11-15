@@ -23,7 +23,9 @@ export default class ProdutoVendaValidator {
    *     ])
    *    ```
    */
-  public schema = schema.create({})
+  public schema = schema.create({
+
+  })
 
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`
