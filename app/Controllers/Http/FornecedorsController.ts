@@ -6,7 +6,7 @@ import FornecedorValidator from "App/Validators/FornecedorValidator";
 export default class FornecedorsController {
     
     index(){
-        return Fornecedor.query().preload('produto').paginate(1)
+        return Fornecedor.query().preload("produto").paginate(1)
     }
     async store({request}){
     const dados = await request.validate(FornecedorValidator)

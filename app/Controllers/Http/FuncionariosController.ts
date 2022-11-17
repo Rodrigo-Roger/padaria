@@ -5,7 +5,7 @@ import FuncionarioValidator from "App/Validators/FuncionarioValidator";
 
 export default class FuncionariosController {
     index(){
-        return Funcionario.all()
+        return Funcionario.query().preload('venda').paginate(1)
     }
     async store({request}){
         const dados = await request.validate(FuncionarioValidator)
