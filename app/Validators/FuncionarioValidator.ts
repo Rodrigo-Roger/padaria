@@ -27,7 +27,9 @@ export default class FuncionarioValidator {
     nome: schema.string([
       rules.maxLength(50)
     ]),
-    CPF: schema.string(),
+    CPF: schema.string([
+      rules.unique({ table: 'funcionarios', column: 'CPF' })
+    ]),
     telefone: schema.number(),
     endereco:schema.string()
   })

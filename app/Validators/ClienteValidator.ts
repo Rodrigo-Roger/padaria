@@ -27,10 +27,13 @@ export default class ClienteValidator {
     nome: schema.string([
       rules.maxLength(50)
     ]),
-    CPF: schema.string(),
+    CPF: schema.string({}, [
+      rules.unique({ table: 'clientes', column: 'CPF' })
+    ]),
     telefone: schema.number(),
     email: schema.string([
-      rules.email()
+      rules.email(),
+      rules.unique({ table: 'clientes', column: 'email' })
     ])
 
   })

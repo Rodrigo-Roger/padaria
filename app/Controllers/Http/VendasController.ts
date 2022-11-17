@@ -5,7 +5,7 @@ import VendaValidator from "App/Validators/VendaValidator";
 
 export default class VendasController {
     index(){
-        return Venda.query().paginate(1)
+        return Venda.query().preload("produtos").paginate(1)
     }
     async store({request}){
         const dados = await request.validate(VendaValidator)

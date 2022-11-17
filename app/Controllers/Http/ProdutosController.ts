@@ -5,7 +5,7 @@ import ProdutoValidator from "App/Validators/ProdutoValidator";
 
 export default class ProdutosController {
     index(){
-        return Produto.query().paginate(1)
+        return Produto.query().preload("vendas").paginate(1)
     }
     async store({request}){
         const dados = await request.validate(ProdutoValidator)        

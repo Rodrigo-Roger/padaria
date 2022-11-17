@@ -32,4 +32,6 @@ Route.resource('/fornecedores','FornecedorsController').apiOnly()
 Route.resource('/produtos','ProdutosController').apiOnly()
 Route.resource('/funcionarios','FuncionariosController').apiOnly()
 Route.resource('/vendas','VendasController').apiOnly()
+Route.resource('/produtovendas','ProdutoVendasController').apiOnly()
+
 }).middleware("auth")

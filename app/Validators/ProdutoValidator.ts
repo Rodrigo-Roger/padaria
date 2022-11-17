@@ -29,8 +29,8 @@ export default class ProdutoValidator {
     ]),
     validade: schema.date(),
     preco: schema.string(),
-    forncedor_id: schema.number([
-      rules.exists({ table:'fornecedor', column: 'id' })
+    fornecedor_id: schema.number([
+      rules.exists({ table:'fornecedors', column: 'id' })
     ])
   })
 

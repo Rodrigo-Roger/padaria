@@ -27,7 +27,9 @@ export default class FornecedorValidator {
     nome:schema.string([
       rules.maxLength(50)
     ]),
-    CNPJ:schema.string(),
+    CNPJ:schema.string([
+      rules.unique({ table: 'fornecedors', column: 'CNPJ' })
+    ]),
     telefone:schema.number()
   })
 

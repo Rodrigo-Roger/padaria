@@ -4,7 +4,7 @@
 import ProdutoVenda from "App/Models/ProdutoVenda";
 import ProdutoVendaValidator from "App/Validators/ProdutoVendaValidator";
 
-export default class VendasController {
+export default class ProdutoVendasController {
     index(){
         return ProdutoVenda.query().paginate(1)
     }
