@@ -48,5 +48,8 @@ export default class VendaValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+   public messages: CustomMessages = {
+    exists:'Insira um valor existente!',
+    alpha:'Insira uma localização valida',
+  }
 }

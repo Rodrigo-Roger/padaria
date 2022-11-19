@@ -11,7 +11,7 @@ export default class Produto extends BaseModel {
   public nome: String
 
   @column()
-  public validade: String
+  public validade: Date
   
   @column()
   public preco: string //valor pode ser centavos
