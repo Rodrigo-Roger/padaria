@@ -50,7 +50,6 @@ export default class ClienteValidator {
    *
    */
   public messages: CustomMessages = {
-    exists:'Insira um valor existente!',
-    alpha:'Insira uma localização valida',
+  unique:"Insira outro!:Valor ja exite..."
   }
 }
