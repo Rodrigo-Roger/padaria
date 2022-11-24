@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column, ManyToMany, manyToMany } from '@ioc:Adonis/Lucid/Orm'
 import Fornecedor from './Fornecedor'
 import Venda from './Venda'
+import Marca from './Marca'
 
 export default class Produto extends BaseModel {
   @column({ isPrimary: true })
@@ -11,6 +12,9 @@ export default class Produto extends BaseModel {
   public nome: String
 
   @column()
+  public sabor: string
+  
+  @column()
   public validade: Date
   
   @column()
@@ -18,6 +22,9 @@ export default class Produto extends BaseModel {
 
   @column()
   public fornecedor_id: Number
+
+  @column()
+  public marca_id: Number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -28,6 +35,11 @@ export default class Produto extends BaseModel {
   @belongsTo(() => Fornecedor)
   public fornecedor: BelongsTo<typeof Fornecedor>
 
+  @belongsTo(() => Marca)
+  public marca: BelongsTo<typeof Marca>
+
   @manyToMany(()=>Venda, {pivotTable:'produto_vendas'})
   public vendas:ManyToMany<typeof Venda>
+
+  
 }

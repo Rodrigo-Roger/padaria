@@ -1,7 +1,7 @@
-import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator'
+import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class ProdutoValidator {
+export default class MarcaValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -24,15 +24,7 @@ export default class ProdutoValidator {
    *    ```
    */
   public schema = schema.create({
-    nome:schema.string([
-      rules.maxLength(50)
-    ]),
-    sabor:schema.string(),
-    validade: schema.date(),
-    preco: schema.string(),
-    fornecedor_id: schema.number([
-      rules.exists({ table:'fornecedors', column: 'id' })
-    ])
+    nome: schema.string(),
   })
 
   /**
@@ -46,6 +38,5 @@ export default class ProdutoValidator {
    * }
    *
    */
-   public messages: CustomMessages = {
-    exists:'Insira um valor existente!',
-  }}
+  public messages: CustomMessages = {}
+}
